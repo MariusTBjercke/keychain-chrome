@@ -1,0 +1,34 @@
+.navigation {
+  display: inline-block;
+
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    border-bottom: 2px solid #6c6c6c;
+    width: 100%;
+  }
+
+  &__tab {
+    padding: 0.5rem 0.85rem;
+    background: #7c7c7c;
+    border-radius: 0.25rem 0.25rem 0 0;
+
+    &:hover {
+      background: #6c6c6c;
+    }
+
+    &:focus-within {
+      background: #6c6c6c;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
