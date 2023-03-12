@@ -1,47 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 
-interface IPassword {
-    password: string;
-}
+export default function Keychain() {
+    const [password, setPassword] = useState("");
 
-export default class Keychain extends React.Component<IPassword, any> {
-    constructor(props: any) {
-        super(props);
-        this.state = { password: "" };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    private handleChange(event: any) {
-        this.setState({ password: event.target.value });
-    }
-
-    private handleSubmit(event: any) {
+    function handleSubmit(event: any) {
         event.preventDefault();
-        localStorage.setItem("keychain", this.state.password);
-        this.setState({ password: "" });
+        localStorage.setItem("keychain", password);
+        setPassword("");
     }
 
-    render() {
-        return (
-            <div>
-                <header>
-                    <Navigation />
-                    <h1>Keychain</h1>
+    return (
+        <div>
+            <header>
+                <Navigation />
+                <h1>Keychain</h1>
 
-                    <form onSubmit={this.handleSubmit}>
-                        <input
-                            type={"password"}
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                        <br />
-                        <input type="submit" value={"Submit"} />
-                    </form>
-                </header>
-            </div>
-        );
-    }
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type={"password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <br />
+                    <input type="submit" value={"Search"} />
+                </form>
+            </header>
+        </div>
+    );
 }
