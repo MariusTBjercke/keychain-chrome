@@ -11,21 +11,29 @@ export default function Keychain() {
     }
 
     return (
-        <div>
+        <div className="keychain">
             <header>
                 <Navigation />
                 <h1>Keychain</h1>
+            </header>
 
-                <form onSubmit={handleSubmit}>
+            <section className="keychain__results">
+                <div>Results:</div>
+                <div>0</div>
+            </section>
+
+            <form onSubmit={handleSubmit}>
+                <div>
                     <input
                         type={"password"}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <br />
+                </div>
+                <div>
                     <input type="submit" value={"Search"} />
-                </form>
-            </header>
+                </div>
+            </form>
         </div>
     );
 }

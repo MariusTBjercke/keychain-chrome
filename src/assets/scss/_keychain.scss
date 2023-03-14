@@ -1,0 +1,13 @@
+.keychain {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__results {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+    }
+}

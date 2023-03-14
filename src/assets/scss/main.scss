@@ -1,22 +1,24 @@
 @import "home";
 @import "navigation";
+@import "keychain";
 
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  overflow-y: scroll;
-  // Might need overflow-y: scroll in the future.
+    overflow-y: scroll;
+    // Might need overflow-y: scroll in the future.
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #333;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #333;
 }
 
 #root {
-  padding: 1rem;
+    padding: 1rem;
 }
